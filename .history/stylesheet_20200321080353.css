@@ -1,0 +1,23 @@
+.body{
+background-color: Black;
+}
+
+.nav{
+padding-bottom: 50px;
+
+
+.section{
+align-items: center;
+padding-top: 3em;
+}
+
+#img-lock{
+padding-left: 2in;
+max-width: 100px;
+max-height: 100px;
+}
+
+.h4{
+text-align: center;
+}
+

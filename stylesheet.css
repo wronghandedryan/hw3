@@ -1,0 +1,44 @@
+body{
+background-color: Black;
+}
+
+#crossbones{
+    color:rgb(47.2%, 47.2%, 47.2%);
+    columns: row 12px;
+}
+
+sfg{
+    float: inline-start;
+    z-index: -1;
+}
+
+iframe {
+    visibility: hidden;
+    position: absolute;
+    left: 0; top: 0;
+    height:0; width:0;
+    border: none;
+}
+nav{
+padding-bottom: 50px;
+}
+
+section{
+align-items: center;
+padding-top: 3em;
+}
+
+#img-lock{
+padding-left: 2in;
+max-width: 100px;
+max-height: 100px;
+}
+
+.h4{
+float:center;
+font-size: x-large;
+}
+
+h5{
+    max-width: 9;
+}

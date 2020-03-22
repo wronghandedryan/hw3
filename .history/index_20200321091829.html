@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <html lang="en">
+  <head>
+ <!--password-generator-->
+ <title>WrongHanded Generator</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="passgen.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+    <script src="https://kit.fontawesome.com/a076d05399.js"> </script>
+
+  </head>
+<body>
+
+        <div class="container col-12 bg-dark p-3 m-3 block-inline">
+            <div class="logo col-12"
+            <img class="img-lock" src="lock.png" alt="lock" />
+            </div>
+            <div class="container ">
+            <h4 class="text-white">Password Generator</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-lg bg-dark text-white pl-30px p-3 m-3">
+        <div>
+            Password Length (<span id='len'>5</span>): <input name='passwordLength' type='range' value='128' min='4' max='256' />
+        </div>
+       <!--selectable requirments for password-->
+        <div>
+            Upper Case:
+            <input type='checkbox' name='upperCase' value='true' />
+        </div>
+        <div>
+            Lower Case:
+            <input type='checkbox' name='lowerCase' value='true' />
+        </div>
+        <div>
+            Numbers:
+            <input type='checkbox' name='numbers' value='true' />
+        </div>
+        <div>
+            Symbols:
+            <input type='checkbox' name='symbols' value='true' />
+        </div>
+        <div class="alert alert-dark bg-dark">
+            <button id='gen-password' class="btn badge badge-pill btn-sm text-white col-12 bg-dark" data-toggle="modal" data-target=".bd-example-modal-lg">
+                <h4>Generate password</h4>
+            </button>
+        </div>
+        <span class="border-0"></span>
+        <span class="border-top-0"></span>
+        <span class="border-right-0"></span>
+        <span class="border-bottom-0"></span>
+        <span class="border-left-0"></span>
+    </div>
+    <div class="footer">
+        <h4><WrongHanded Development</h4>
+    </div>
+        <script type='text/javascript'>
+            const button = document.querySelector('#gen-password');
+            const passwordLengthField = document.querySelector('input[name=passwordLength]');
+            const upperCaseField = document.querySelector('input[name=upperCase]');
+            const lowerCaseField = document.querySelector('input[name=lowerCase]');
+            const numbersField = document.querySelector('input[name=numbers]');
+            const symbolsField = document.querySelector('input[name=symbols]');
+
+            passwordLengthField.addEventListener('mousemove', () => {
+                document.querySelector('#len').innerHTML = passwordLengthField.value;
+            })
+
+            button.addEventListener('click', () => {
+                const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+                const numbers = '0123456789';
+                const symbols = '!@#$%^&*.';
+
+                const options = {
+                    length: passwordLengthField.value,
+                    upperCase: upperCaseField.checked,
+                    lowerCase: lowerCaseField.checked,
+                    numbers: numbersField.checked,
+                    symbols: symbolsField.checked,
+                };
+
+                let seed = '';
+
+                if (options.upperCase) {
+                    seed += upperCase;
+                }
+                if (options.lowerCase) {
+                    seed += lowerCase;
+                }
+                if (options.numbers) {
+                    seed += numbers;
+                }
+                if (options.symbols) {
+                    seed += symbols;
+                }
+                if (seed == '') {
+                    alert('You must select at least 1 type of character');
+                    return;
+                }
+
+                // generate random up to the length of the entire seed
+                let output = '';
+                for (let i = 0; i < options.length; i++) {
+                    const rand = Math.floor(Math.random() * seed.length);
+                    output += seed[rand];
+                }
+                alert(output);
+                $('.alert').alert()
+            });
+        </script>
+  </body>
+</html>
