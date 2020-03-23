@@ -11,16 +11,6 @@ sfg{
     float: inline-start;
     z-index: -1;
 }
-<<<<<<< HEAD
-
-iframe {
-    visibility: hidden;
-    position: absolute;
-    left: 0; top: 0;
-    height:0; width:0;
-    border: none;
-}
-=======
 #pasgentxt{
     text-align: center;
     flood-color:white) ;
@@ -29,7 +19,13 @@ iframe {
 
 }
 
->>>>>>> dcbbc92e9d4499447de0c031464d15267ce9f838
+iframe {
+    visibility: hidden;
+    position: absolute;
+    left: 0; top: 0;
+    height:0; width:0;
+    border: none;
+}
 nav{
 padding-bottom: 50px;
 }
@@ -47,7 +43,6 @@ max-height: 100px;
 
 .h4{
 float:center;
-font-size: x-large;
 }
 
 h5{
