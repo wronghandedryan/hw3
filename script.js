@@ -52,3 +52,4 @@ button.addEventListener('click', () => {
     alert(output);
     $('.alert').alert()
 });
+
