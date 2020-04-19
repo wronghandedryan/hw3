@@ -5,7 +5,7 @@ imagine its 2006, you just got done using a keygen you got off limewire to insta
 make rand pass word with charcters numbers and a-z in upper and lower with up 256 chacter password.
 
 ## Support-
-If someone bre3aks this password then i wilkl set up a support group for you poersonally.
+If someone breaks this password then i wilkl set up a support group for you poersonally.
 
 ______________________________________________________________________________________________________________________________
 ## Contributing 
